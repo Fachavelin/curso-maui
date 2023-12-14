@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.ProductsPage"
+             xmlns:handlers="clr-namespace:ShopApp.Handlers"
+             Title="ProductsPage">
+
+    <Shell.SearchHandler>
+        <handlers:ProductoBusquedaHandler 
+            Placeholder="Buscar Productos"
+            DisplayMemberName="Nombre"
+            ShowsResults="True"
+            ItemTemplate="{StaticResource ProductDataTempale}"
+            />
+    </Shell.SearchHandler>
+
+    <CollectionView 
+        x:Name="products"
+        SelectionMode="Single"
+        ItemTemplate="{StaticResource ProductDataTempale}"
+        />
+
+</ContentPage>
